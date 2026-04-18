@@ -52,6 +52,11 @@
       --r:          0.6rem;
       --ff-serif:   "Libre Baskerville", Georgia, serif;
       --ff-sans:    "DM Sans", sans-serif;
+      /* ── Honey Gold additions ── */
+      --gold:        #C8860A;
+      --gold-light:  #E8A020;
+      --gold-pale:   #FDF3DC;
+      --gold-glow:   rgba(200,134,10,.15);
     }
 
     html { scroll-behavior: smooth; }
@@ -158,7 +163,7 @@
     }
     .hero-desc strong { color: var(--white); font-weight: 500; }
 
-    .hero-pills { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero-pills { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 2.5rem; <span class="pill-gold">Family & Faith First</span> }
     .pill {
       font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
       font-weight: 600; padding: .38rem .95rem; border-radius: 30px;
@@ -284,6 +289,22 @@
     .cred-sub { font-size: .78rem; color: var(--slate); margin-top: .15rem; }
 
     /* Personal sidebar */
+    <!-- ♥ Bruce & Debbie Family Card -->
+        <div class="family-card">
+          <img
+            src="/images/bruce-debbie-beach.jpg"
+            alt="Dr. Bruce Pendley and his wife Debbie enjoying the beach at sunset"
+          />
+          <div class="family-card-caption">
+            <div class="family-names">Bruce & Debbie Pendley</div>
+            <div class="family-tagline">
+              Debbie is the <strong>love of his life</strong> — together they have built a beautiful family.
+              The reason Dr. Pendley is so passionate about health is simple: he wants to be the
+              <strong>greatest positive force</strong> in his family's wellbeing, so he can be fully present
+              and enjoy every moment with the people who matter most.
+            </div>
+          </div>
+        </div>
     .personal-block {
       margin-top: 2rem; padding: 1.6rem 2rem;
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
@@ -471,6 +492,516 @@
     .footer-copy { font-size: .68rem; color: rgba(255,255,255,.15); }
 
     /* ══ ANIMATIONS ═══════════════════════════════════ */
+    /* ══ HONEYCOMB HEX BACKGROUND ════════════════════ */
+    .hex-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .hex-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3Cpath d='M28 50 L56 66 L56 100 L28 116 L0 100 L0 66 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .gold-eyebrow-line { width: 32px; height: 2px; background: var(--gold); border-radius: 2px; }
+    .gold-eyebrow-txt  { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .family-card {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 44px rgba(10,35,66,.16);
+      position: relative;
+    }
+    .family-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .family-card-caption {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3D6B 100%);
+      padding: 1.3rem 1.6rem;
+      border-top: 3px solid var(--gold);
+      position: relative;
+    }
+    .family-card-caption::before {
+      content: "♥";
+      position: absolute;
+      top: -14px; right: 1.4rem;
+      background: var(--gold);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      line-height: 28px;
+      text-align: center;
+    }
+    .family-names {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .family-tagline {
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.6;
+    }
+    .family-tagline strong { color: var(--gold-light); }
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: "";
+      position: absolute;
+      top: -10px; right: -10px;
+      width: 80px; height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 92'%3E%3Cpath d='M40 0 L80 23 L80 69 L40 92 L0 69 L0 23 Z' fill='none' stroke='rgba(200,134,10,0.18)' stroke-width='2'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .svc-card:hover { border-color: var(--gold) !important; }
+    .svc-card:hover .svc-arrow { color: var(--gold); }
+    .pill-gold {
+      background: rgba(200,134,10,.12);
+      border: 1px solid rgba(200,134,10,.35);
+      color: #E8A020;
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 600; padding: .38rem .95rem; border-radius: 30px;
+    }
+    .honey-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 2rem;
+    }
+    .honey-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,134,10,.4), transparent);
+    }
+    .honey-hex-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ══ ANIMATIONS ═══════════════════════ */  ← your existing line stays here
+    /* ══ HONEYCOMB HEX BACKGROUND ════════════════════ */
+    .hex-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .hex-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3Cpath d='M28 50 L56 66 L56 100 L28 116 L0 100 L0 66 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .gold-eyebrow-line { width: 32px; height: 2px; background: var(--gold); border-radius: 2px; }
+    .gold-eyebrow-txt  { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .family-card {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 44px rgba(10,35,66,.16);
+      position: relative;
+    }
+    .family-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .family-card-caption {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3D6B 100%);
+      padding: 1.3rem 1.6rem;
+      border-top: 3px solid var(--gold);
+      position: relative;
+    }
+    .family-card-caption::before {
+      content: "♥";
+      position: absolute;
+      top: -14px; right: 1.4rem;
+      background: var(--gold);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      line-height: 28px;
+      text-align: center;
+    }
+    .family-names {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .family-tagline {
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.6;
+    }
+    .family-tagline strong { color: var(--gold-light); }
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: "";
+      position: absolute;
+      top: -10px; right: -10px;
+      width: 80px; height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 92'%3E%3Cpath d='M40 0 L80 23 L80 69 L40 92 L0 69 L0 23 Z' fill='none' stroke='rgba(200,134,10,0.18)' stroke-width='2'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .svc-card:hover { border-color: var(--gold) !important; }
+    .svc-card:hover .svc-arrow { color: var(--gold); }
+    .pill-gold {
+      background: rgba(200,134,10,.12);
+      border: 1px solid rgba(200,134,10,.35);
+      color: #E8A020;
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 600; padding: .38rem .95rem; border-radius: 30px;
+    }
+    .honey-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 2rem;
+    }
+    .honey-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,134,10,.4), transparent);
+    }
+    .honey-hex-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ══ ANIMATIONS ═══════════════════════ */  ← your existing line stays here
+      /* ══ HONEYCOMB HEX BACKGROUND ════════════════════ */
+    .hex-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .hex-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3Cpath d='M28 50 L56 66 L56 100 L28 116 L0 100 L0 66 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .gold-eyebrow-line { width: 32px; height: 2px; background: var(--gold); border-radius: 2px; }
+    .gold-eyebrow-txt  { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .family-card {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 44px rgba(10,35,66,.16);
+      position: relative;
+    }
+    .family-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .family-card-caption {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3D6B 100%);
+      padding: 1.3rem 1.6rem;
+      border-top: 3px solid var(--gold);
+      position: relative;
+    }
+    .family-card-caption::before {
+      content: "♥";
+      position: absolute;
+      top: -14px; right: 1.4rem;
+      background: var(--gold);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      line-height: 28px;
+      text-align: center;
+    }
+    .family-names {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .family-tagline {
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.6;
+    }
+    .family-tagline strong { color: var(--gold-light); }
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: "";
+      position: absolute;
+      top: -10px; right: -10px;
+      width: 80px; height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 92'%3E%3Cpath d='M40 0 L80 23 L80 69 L40 92 L0 69 L0 23 Z' fill='none' stroke='rgba(200,134,10,0.18)' stroke-width='2'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .svc-card:hover { border-color: var(--gold) !important; }
+    .svc-card:hover .svc-arrow { color: var(--gold); }
+    .pill-gold {
+      background: rgba(200,134,10,.12);
+      border: 1px solid rgba(200,134,10,.35);
+      color: #E8A020;
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 600; padding: .38rem .95rem; border-radius: 30px;
+    }
+    .honey-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 2rem;
+    }
+    .honey-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,134,10,.4), transparent);
+    }
+    .honey-hex-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ══ ANIMATIONS ═══════════════════════ */  ← your existing line stays here
+      /* ══ HONEYCOMB HEX BACKGROUND ════════════════════ */
+    .hex-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .hex-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3Cpath d='M28 50 L56 66 L56 100 L28 116 L0 100 L0 66 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .gold-eyebrow-line { width: 32px; height: 2px; background: var(--gold); border-radius: 2px; }
+    .gold-eyebrow-txt  { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .family-card {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 44px rgba(10,35,66,.16);
+      position: relative;
+    }
+    .family-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .family-card-caption {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3D6B 100%);
+      padding: 1.3rem 1.6rem;
+      border-top: 3px solid var(--gold);
+      position: relative;
+    }
+    .family-card-caption::before {
+      content: "♥";
+      position: absolute;
+      top: -14px; right: 1.4rem;
+      background: var(--gold);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      line-height: 28px;
+      text-align: center;
+    }
+    .family-names {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .family-tagline {
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.6;
+    }
+    .family-tagline strong { color: var(--gold-light); }
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: "";
+      position: absolute;
+      top: -10px; right: -10px;
+      width: 80px; height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 92'%3E%3Cpath d='M40 0 L80 23 L80 69 L40 92 L0 69 L0 23 Z' fill='none' stroke='rgba(200,134,10,0.18)' stroke-width='2'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .svc-card:hover { border-color: var(--gold) !important; }
+    .svc-card:hover .svc-arrow { color: var(--gold); }
+    .pill-gold {
+      background: rgba(200,134,10,.12);
+      border: 1px solid rgba(200,134,10,.35);
+      color: #E8A020;
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 600; padding: .38rem .95rem; border-radius: 30px;
+    }
+    .honey-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 2rem;
+    }
+    .honey-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,134,10,.4), transparent);
+    }
+    .honey-hex-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ══ ANIMATIONS ═══════════════════════ */  ← your existing line stays here
+    /* ══ HONEYCOMB HEX BACKGROUND ════════════════════════════ */
+    .hex-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .hex-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0 L56 16 L56 50 L28 66 L0 50 L0 16 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3Cpath d='M28 50 L56 66 L56 100 L28 116 L0 100 L0 66 Z' fill='none' stroke='rgba(200,134,10,0.10)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    /* ══ HONEY ACCENT LINE ════════════════════════════════════ */
+    .gold-eyebrow-line { width: 32px; height: 2px; background: var(--gold); border-radius: 2px; }
+    .gold-eyebrow-txt  { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+    /* ══ FAMILY PHOTO CARD ════════════════════════════════════ */
+    .family-card {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 44px rgba(10,35,66,.16);
+      position: relative;
+    }
+    .family-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+    .family-card-caption {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3D6B 100%);
+      padding: 1.3rem 1.6rem;
+      border-top: 3px solid var(--gold);
+      position: relative;
+    }
+    .family-card-caption::before {
+      content: "♥";
+      position: absolute;
+      top: -14px; right: 1.4rem;
+      background: var(--gold);
+      color: #fff;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      line-height: 28px;
+      text-align: center;
+    }
+    .family-names {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .family-tagline {
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.6;
+    }
+    .family-tagline strong { color: var(--gold-light); }
+
+    /* ══ HONEYCOMB SERVICE CARDS ══════════════════════════════ */
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: "";
+      position: absolute;
+      top: -10px; right: -10px;
+      width: 80px; height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 92'%3E%3Cpath d='M40 0 L80 23 L80 69 L40 92 L0 69 L0 23 Z' fill='none' stroke='rgba(200,134,10,0.18)' stroke-width='2'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 1;
+      pointer-events: none;
+    }
+    .svc-card:hover { border-color: var(--gold) !important; }
+    .svc-card:hover .svc-arrow { color: var(--gold); }
+
+    /* ══ GOLD HERO PILL ACCENT ════════════════════════════════ */
+    .pill-gold {
+      background: rgba(200,134,10,.12);
+      border: 1px solid rgba(200,134,10,.35);
+      color: #E8A020;
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 600; padding: .38rem .95rem; border-radius: 30px;
+    }
+
+    /* ══ GOLD SECTION DIVIDER ═════════════════════════════════ */
+    .honey-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 2rem;
+    }
+    .honey-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,134,10,.4), transparent);
+    }
+    .honey-hex-icon {
+      width: 22px; height: 22px; flex-shrink: 0;
+    }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -775,7 +1306,7 @@
 </section>
 
 <!-- EDUCATION TIMELINE -->
-<section id="education">
+<section id="education" class="hex-bg">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
       <div>
@@ -831,7 +1362,7 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services">
+<section id="services" class="hex-bg">
   <div class="container">
     <div class="eyebrow-row">
       <div class="eyebrow-line"></div>
